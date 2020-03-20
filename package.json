@@ -1,0 +1,8 @@
+{
+  "name": "loteriasbot",
+  "version": "1.0.0",
+  "description": "Bot de telegram que envia resultados da mega-sena usando Web Scraping",
+  "main": "index.js",
+  "author": "Guilherme Augusto <guilhermejoazeiro@gmail.com>",
+  "license": "MIT"
+}
