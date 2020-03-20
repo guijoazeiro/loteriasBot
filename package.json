@@ -4,5 +4,9 @@
   "description": "Bot de telegram que envia resultados da mega-sena usando Web Scraping",
   "main": "index.js",
   "author": "Guilherme Augusto <guilhermejoazeiro@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-telegram-bot-api": "^0.40.0"
+  }
 }
