@@ -6,7 +6,10 @@
   "author": "Guilherme Augusto <guilhermejoazeiro@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.2.0",
-    "node-telegram-bot-api": "^0.40.0"
+    "node-telegram-bot-api": "^0.40.0",
+    "puppeteer": "^2.1.1",
+    "string": "^3.3.3"
   }
 }
