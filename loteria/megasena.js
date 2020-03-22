@@ -9,7 +9,7 @@ const extrairDados = async function () {
     let html = await page.content()
     const $ = await cheerio.load(html)
     let data = await  $('#conteudoresultado > div.content-section.section-text.with-box.no-margin-bottom > div > h2 > span').text()
-    let data1 = await S(data).collapseWhitespace().s
+    let dataFinal = await S(data).collapseWhitespace().s
     let dezena1 = await $('#ulDezenas > li:nth-child(1)').text()
     let dezena2 = await $('#ulDezenas > li:nth-child(2)').text()
     let dezena3 = await $('#ulDezenas > li:nth-child(3)').text()
@@ -17,22 +17,7 @@ const extrairDados = async function () {
     let dezena5 = await $('#ulDezenas > li:nth-child(5)').text()
     let dezena6 = await $('#ulDezenas > li:nth-child(6)').text()
 
-    
-
-    return {
-        data1,
-        dezena1,
-        dezena2,
-        dezena3,
-        dezena4,
-        dezena5,
-        dezena6,
-
-
-    }
-    
-
-    
+    return `${dataFinal}\nDezenas: ${dezena1}, ${dezena2}, ${dezena3}, ${dezena4}, ${dezena5}, ${dezena6}`     
 }
 
 module.exports = extrairDados()

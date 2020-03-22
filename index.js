@@ -18,10 +18,10 @@ bot.on('message', (msg) => {
 
 bot.onText(/\/mega/, async (msg) => {
     loteria.then(function (val) {
-        const mensagem = `${val.data1}\nDezenas: ${val.dezena1}, ${val.dezena2}, ${val.dezena3}, ${val.dezena4}, ${val.dezena5}, ${val.dezena6}`
+        bot.sendMessage(msg.chat.id, val)
 
-        bot.sendMessage(msg.chat.id, mensagem)
-
+    }).catch((e) => {
+        bot.sendMessage(msg.chat.id, "Erro")
     })
     
 
