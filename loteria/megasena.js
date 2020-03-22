@@ -2,7 +2,7 @@ const pupeeter = require('puppeteer')
 const cheerio = require('cheerio')
 const S = require('string')
 
-const extrairDados = async function () {
+async function extrairDados() {
     const browser = await pupeeter.launch()
     const page = await browser.newPage()
     await page.goto('http://loterias.caixa.gov.br/wps/portal/loterias/landing/megasena/')
@@ -17,7 +17,7 @@ const extrairDados = async function () {
     let dezena5 = await $('#ulDezenas > li:nth-child(5)').text()
     let dezena6 = await $('#ulDezenas > li:nth-child(6)').text()
 
-    return `${dataFinal}\nDezenas: ${dezena1}, ${dezena2}, ${dezena3}, ${dezena4}, ${dezena5}, ${dezena6}`     
+    return `MEGA-SENA ${dataFinal}\nDezenas: ${dezena1}, ${dezena2}, ${dezena3}, ${dezena4}, ${dezena5}, ${dezena6}`     
 }
 
 module.exports = extrairDados()

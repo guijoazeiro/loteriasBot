@@ -1,5 +1,6 @@
 const TelegramBot = require('node-telegram-bot-api')
-const loteria = require('./loteria/megasena')
+const megasena = require('./loteria/megasena')
+const lotofacil = require('./loteria/lotofacil')
 
 require('dotenv/config')
 
@@ -17,14 +18,21 @@ bot.on('message', (msg) => {
 })
 
 bot.onText(/\/mega/, async (msg) => {
-    loteria.then(function (val) {
+    megasena.then(function (val) {
         bot.sendMessage(msg.chat.id, val)
 
     }).catch((e) => {
         bot.sendMessage(msg.chat.id, "Erro")
     })
-    
+});
 
+bot.onText(/\/loto/, async (msg) => {
+    lotofacil.then(function (val) {
+        bot.sendMessage(msg.chat.id, val)
+
+    }).catch((e) => {
+        bot.sendMessage(msg.chat.id, "Erro")
+    })
 });
 
 
